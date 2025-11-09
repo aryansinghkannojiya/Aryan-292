@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int num = 21;      // The number you want to reverse
+    int reversed = 0;  // Variable to store the reversed number
+    int remainder;     
+
+    // Store the original number for printing later
+    int original_num = num;
+
+    // The loop continues until the number becomes 0
+    while (num != 0) {
+        // 1. Get the last digit (for 21, it's 1)
+        remainder = num % 10;
+
+        // 2. Build the reversed number (reversed * 10 shifts digits left, then add the new digit)
+        // Iteration 1: reversed = 0 * 10 + 1  => 1
+        // Iteration 2: reversed = 1 * 10 + 2  => 12
+        reversed = reversed * 10 + remainder;
+
+        // 3. Remove the last digit from the original number
+        // Iteration 1: num = 21 / 10 => 2
+        // Iteration 2: num = 2 / 10  => 0 (loop terminates)
+        num /= 10;
+    }
+
+    printf("The original number is: %d\n", original_num);
+    printf("The reversed number is: %d\n", reversed);
+
+    return 0;
+}
