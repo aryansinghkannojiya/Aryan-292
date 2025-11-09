@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    long long sum = 0; // Use long long to prevent potential overflow for large N
+
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
+
+    // Check for valid input (N should be a positive integer)
+    if (N < 0) {
+        printf("Please enter a positive integer for N.\n");
+        return 1; // Indicate an error
+    }
+
+    // Loop from i = 1 up to N, adding each number to the sum
+    for (i = 1; i <= N; i++) {
+        sum += i; // equivalent to sum = sum + i;
+    }
+
+    printf("The sum of the first %d natural numbers is: %lld\n", N, sum);
+
+    return 0;
+}
