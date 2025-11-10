@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Function to calculate nCr (n choose r)
+long long calculate_nCr(int n, int r) {
+    long long res = 1;
+    int i;
+    if (r < 0 || r > n)
+        return 0;
+    if (r == 0 || r == n)
+        return 1;
+    if (r > n / 2)
+        r = n - r;
+
+    // C(n,r) = C(n,r-1) * (n-r+1) / r
+    for (i = 1; i <= r; ++i) {
+        res = res * (n - i + 1) / i;
+    }
+    return res;
+}
+
+int main() {
+    int rows, i, j;
+
+    printf("Enter the number of rows for Pascal's Triangle: ");
+    scanf("%d", &rows);
+
+    for (i = 0; i < rows; i++) {
+        // Print spaces for alignment
+        for (j = 0; j <= rows - i - 2; j++) {
+            printf("  ");
+        }
+        // Print numbers
+        for (j = 0; j <= i; j++) {
+            printf("%4lld", calculate_nCr(i, j));
+        }
+        printf("\n");
+    }
+    return 0;
+}
