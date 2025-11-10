@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    float sum = 0.0; // Use float or double for precise summation
+
+    printf("Enter the number of terms (N): ");
+    scanf("%d", &n);
+
+    printf("Harmonic Series: ");
+    for (i = 1; i <= n; i++) {
+        printf("1/%d", i);
+        if (i < n) {
+            printf(" + ");
+        }
+        sum += (1.0 / i); // Use 1.0 for float division
+    }
+
+    printf("\nSum of the series is: %.4f\n", sum);
+    return 0;
+}
