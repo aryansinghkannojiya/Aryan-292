@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("ASCII Values of commonly used characters:\n");
+
+    // Print ASCII values for A-Z
+    printf("A-Z:\n");
+    for (ch = 'A'; ch <= 'Z'; ch++) {
+        printf("%c: %d | ", ch, ch);
+    }
+    printf("\n\n");
+
+    // Print ASCII values for 0-9
+    printf("0-9:\n");
+    for (ch = '0'; ch <= '9'; ch++) {
+        printf("%c: %d | ", ch, ch);
+    }
+    printf("\n");
+    return 0;
+}
